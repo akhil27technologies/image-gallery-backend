@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Gallery-Backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c200239c9e98ac0cd8dd8205cb627a41c15a7c13")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a7f448d7946d1e974612e28a609f516403d8ee29")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gallery-Backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gallery-Backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

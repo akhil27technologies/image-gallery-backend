@@ -2,6 +2,7 @@
 using MongoDB.Driver;
 using Gallery_Backend.Models;
 using Gallery_Backend.Services;
+using MongoDB.Bson;
 
 
 namespace Gallery_Backend.Controllers
@@ -37,6 +38,7 @@ namespace Gallery_Backend.Controllers
         [HttpPost]
         public async Task<ActionResult<Image>> CreateImage([FromBody] Image image)
         {
+            image.MongoId = ObjectId.GenerateNewId();
             await _context.Images.InsertOneAsync(image);
             return CreatedAtAction(nameof(GetImage), new { id = image.Id }, image);
         }

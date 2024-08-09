@@ -9,20 +9,18 @@ builder.Services.Configure<MongoDBSettings>(
 
 builder.Services.AddSingleton<MongoDBContext>();
 
-
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Configure CORS to allow requests from your React app
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowReactApp",
-        builder =>
-        {
-            builder.WithOrigins("http://localhost:3000")
-                   .AllowAnyHeader()
-                   .AllowAnyMethod();
-        });
+    options.AddPolicy("AllowAll",
+        builder => builder
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
 });
 
 var app = builder.Build();
@@ -36,7 +34,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseCors("AllowReactApp");
+// Use the correct CORS policy name
+app.UseCors("AllowAll");
 
 app.UseAuthorization();
 
